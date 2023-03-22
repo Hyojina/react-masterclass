@@ -1,32 +1,30 @@
 import styled from "styled-components";
 
-const Father = styled.div`
-  display: flex;
+const Box = styled.div`
+  width: 100px;
+  height: 100px;
+  background-color: ${(props) => props.bgColor};
 `;
 
-const Btn = styled.button`
-  color: white;
-  background-color: tomato;
-  border: 0;
-  border-radius: 15px;
+const Circle = styled(Box)`
+  border-radius: 50%;
 `;
 
-const Input = styled.input.attrs({ required: true, minlength: 10 })`
-  background-color: teal;
+const Text = styled.span`
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
 `;
 
 function App() {
   return (
-    <Father>
-      <Btn as="a" href="/">
-        Log in
-      </Btn>
-      <Input />
-      <Input />
-      <Input />
-      <Input />
-      <Input />
-    </Father>
+    <>
+      <Box bgColor="blue">
+        <Text>Hello World!</Text>
+      </Box>
+      <Box bgColor="red" />
+      <Circle bgColor="yellow" />
+    </>
   );
 }
 
