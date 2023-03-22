@@ -2,6 +2,8 @@ import styled, { keyframes } from "styled-components";
 
 const Wrapper = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 // 애니메이션을 keyframs로 만들고 그대로 사용할 수 있다.
@@ -20,6 +22,10 @@ const rotationAnimation = keyframes`
   }
 `;
 
+const Emoji = styled.span`
+  font-size: 36px;
+`;
+
 const Box = styled.div`
   height: 200px;
   width: 200px;
@@ -29,16 +35,9 @@ const Box = styled.div`
   justify-content: center;
   align-items: center;
 
-  // component 안에서 element를 선택할 수 있다.
-  span {
-    font-size: 36px;
-    // 부모 선택자 &로 간단하게 사용할 수 있다.
-    &:hover {
-      font-size: 50px;
-    }
-    &:active {
-      opacity: 0;
-    }
+  // 컴포넌트 직접 타겟팅
+  ${Emoji}:hover {
+    font-size: 100px;
   }
 `;
 
@@ -46,7 +45,7 @@ function App() {
   return (
     <Wrapper>
       <Box>
-        <span>😊</span>
+        <Emoji>😊</Emoji>
       </Box>
     </Wrapper>
   );
