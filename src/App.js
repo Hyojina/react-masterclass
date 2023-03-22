@@ -1,30 +1,39 @@
 import styled from "styled-components";
 
-const Box = styled.div`
-  width: 100px;
-  height: 100px;
-  background-color: ${(props) => props.bgColor};
+const Father = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
-const Circle = styled(Box)`
-  border-radius: 50%;
+const Btn = styled.button`
+  border-radius: 15px;
+  background-color: tomato;
+  border: none;
 `;
 
-const Text = styled.span`
-  font-size: 20px;
-  font-weight: 700;
-  color: #ffffff;
+const Input = styled.input.attrs({
+  required: true,
+  placeholder: "와우",
+  minLength: 10,
+})`
+  background-color: teal;
+  ::placeholder {
+    color: gold;
+  }
 `;
 
 function App() {
   return (
-    <>
-      <Box bgColor="blue">
-        <Text>Hello World!</Text>
-      </Box>
-      <Box bgColor="red" />
-      <Circle bgColor="yellow" />
-    </>
+    <Father as="header">
+      <Btn>Log in</Btn>
+      <Btn as="a" href="/">
+        Log in
+      </Btn>
+      <Input />
+      <Input />
+      <Input />
+      <Input />
+    </Father>
   );
 }
 
