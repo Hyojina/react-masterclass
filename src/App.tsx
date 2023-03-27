@@ -1,4 +1,5 @@
-import styled, { keyframes } from "styled-components";
+import React from "react";
+import styled from "styled-components";
 
 const Wrapper = styled.div`
   display: flex;
@@ -13,12 +14,12 @@ const Title = styled.h1`
   color: ${(props) => props.theme.textColor};
 `;
 
-function App() {
+const App = () => {
   return (
     <Wrapper>
       <Title>Hello</Title>
     </Wrapper>
   );
-}
+};
 
 export default App;
